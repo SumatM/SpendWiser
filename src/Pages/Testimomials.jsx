@@ -1,7 +1,11 @@
 import React from 'react'
+import Slick from "./Slick"
 
 export const Testimomials = () => {
   return (
-    <div>Testimomials</div>
+    <div>
+      <h1>Hear From Our Users</h1>
+      <Slick/>
+    </div>
   )
 }
