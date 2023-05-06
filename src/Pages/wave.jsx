@@ -5,6 +5,8 @@ export const Wave = () => {
   return (
     <div>
         <img src={wave} alt="" />
+
+        
     </div>
   )
 }
