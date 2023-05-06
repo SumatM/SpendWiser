@@ -1,5 +1,6 @@
 import './App.css';
 import { Contact } from './Pages/Contact';
+import Dashboard from './Pages/DashBoard/Dashboard';
 import { Features } from './Pages/Features';
 import { Home } from './Pages/Home';
 import { How_Work } from './Pages/How_Work';
