@@ -11,7 +11,7 @@ export const Home = () => {
         <button>Learn More</button>
       </div>
       <div className='Bannerimg'>
-        <img width="30%" src="https://isavemoney.app/assets/images/01.png" alt="" />
+        <img width="60%" src="https://img.freepik.com/free-vector/blank-screen-laptop-gadget-icon-isolated-white-background_1308-46353.jpg" alt="" />
       </div>
     </DIV>
   )
@@ -25,9 +25,10 @@ const DIV=styled.div`
   align-items: center;
   padding: 5%;
   width: 95%;
-
+  background-color:#0099ff ;
 .Banner1{
   margin-left: 8%;
+  
   h1{
     text-align: left;
     font-size:40px;
@@ -38,9 +39,9 @@ const DIV=styled.div`
     padding: 3%;
     margin-right: 2%;
     border-radius: 25px;
-    background-color: orange;
+    background-color: #0099ff;
     color: white;
-    border: 2px solid red;
+    border: 2px solid orange;
   }
 }
 .Bannerimg{

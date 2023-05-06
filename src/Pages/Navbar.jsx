@@ -86,8 +86,8 @@ width:40px;
 
 const DIV=styled.div`
 height:60px;
-background-color:orange;
-color:white;
+background-color:white;
+color:black;
 display:flex;
 align-items:center;
 
@@ -110,7 +110,7 @@ justify-content:flex-end;
 `
 const LINK=styled(Link)`
 
-color:white;
+color:black;
 
 margin:0 10px;
 cursor:pointer;
