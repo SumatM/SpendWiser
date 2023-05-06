@@ -8,3 +8,5 @@ export const Wave1 = () => {
     </div>
   )
 }
+
+// xnbvkjvnnnv
