@@ -1,4 +1,5 @@
 import './App.css';
+// import { IncomeForm } from './Income/IncomeForm';
 import { Contact } from './Pages/Contact';
 import Dashboard from './Pages/DashBoard/Dashboard';
 import { Features } from './Pages/Features';
@@ -17,6 +18,9 @@ import { Wave1 } from './Pages/wave1';
 function App() {
   return (
     <div className="App">
+
+{/* <IncomeForm/> */}
+
    <Navbar/>
    <Home/>
    <Wave/>
