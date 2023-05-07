@@ -1,4 +1,5 @@
 import './App.css';
+// import { IncomeForm } from './Income/IncomeForm';
 import { Contact } from './Pages/Contact';
 import { Features } from './Pages/Features';
 import { Home } from './Pages/Home';
@@ -13,6 +14,9 @@ import { Testimomials } from './Pages/Testimomials';
 function App() {
   return (
     <div className="App">
+
+{/* <IncomeForm/> */}
+
    <Navbar/>
    <Home/>
    <Features/>
