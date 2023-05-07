@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+// import { LINK } from 'react-router-dom'
 import { Link } from 'react-scroll'
 import styled from 'styled-components'
 import {GiHamburgerMenu} from 'react-icons/gi'
@@ -39,7 +39,7 @@ const Navbar = () => {
          <NavbarLinkExtend to='Testimomials'  spy={true} smooth={true}>Testimomials</NavbarLinkExtend>
          <NavbarLinkExtend to='Pricing'  spy={true} smooth={true}>Pricing</NavbarLinkExtend>
          <NavbarLinkExtend to='contact'  spy={true} smooth={true}>Contact</NavbarLinkExtend>
-         <NavbarLinkExtend to='contact'  spy={true} smooth={true}>Support</NavbarLinkExtend>
+         <NavbarLinkExtend to='Support'  spy={true} smooth={true}>Support</NavbarLinkExtend>
     </NavbarExtendContainer>
       )}
     </DIV>
@@ -52,21 +52,23 @@ const NavbarExtendContainer=styled.div`
  position:absolute;
  top:60px;
  right:10px;
- width:80%;
+ /* width: 100vw; */
+ /* width: 100%; */
  height: calc(100vh - 60px);
  background-color:white;
  color:black;
  display:flex;
  flex-direction:column;
  align-items:center;
- justify-content:space-around
-
-`;
+ 
+ justify-content:space-around;
+ 
+`
 
 const NavbarLinkExtend=styled(Link)`
 
 
-margin:0 10px;
+/* margin:0 10px; */
 cursor:pointer;
 
 &.active{
@@ -86,11 +88,16 @@ width:40px;
 
 const DIV=styled.div`
 height:60px;
-background-color:white;
+background-color:#0099ff;
 color:black;
 display:flex;
 align-items:center;
-
+position: fixed;
+width: 100%;
+/* width: 100%; */
+/* border: 1px solid red; */
+ z-index: 3;
+ box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 `
 const Left=styled.div`
 /* flex:1; */
@@ -110,15 +117,25 @@ justify-content:flex-end;
 `
 const LINK=styled(Link)`
 
-color:black;
+color:white;
 
 margin:0 10px;
 cursor:pointer;
 
 &.active{
-    color:red;
+    background-color: #dee4e9;
+    color: #0099ff;
+    padding: 5px;
+    border-radius: 5px;
 }
 @media screen and (max-width: 700px){
     display:none;
 }
 `
+
+
+
+
+
+
+
