@@ -53,10 +53,10 @@ const NavbarExtendContainer=styled.div`
  top:60px;
  right:10px;
  /* width: 100vw; */
- /* width: 100%; */
+ width: 100%;
  height: calc(100vh - 60px);
- background-color:white;
- color:black;
+ background-color:#0099ff;
+ color:white;
  display:flex;
  flex-direction:column;
  align-items:center;
@@ -72,7 +72,10 @@ const NavbarLinkExtend=styled(Link)`
 cursor:pointer;
 
 &.active{
-    color:red;
+  background-color: #dce9f3;
+    color: #0099ff;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 `
@@ -123,7 +126,7 @@ margin:0 10px;
 cursor:pointer;
 
 &.active{
-    background-color: #dee4e9;
+    background-color: #c4d9eb;
     color: #0099ff;
     padding: 5px;
     border-radius: 5px;
