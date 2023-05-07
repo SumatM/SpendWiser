@@ -27,6 +27,7 @@ function App() {
    <Pricing/>
    <Contact/>
    <Support/>
+   <Dashboard/>
     </div>
   );
 }
