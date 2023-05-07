@@ -1,6 +1,18 @@
+import Chart from './../../Components/Chart'
 import styled from "styled-components"
 
 export default function Dashboard(){
+
+
+    let chartData = [
+        {name:"income",income:121,value:232},
+        {name:"income",income:1291,value:232},
+        {name:"income",income:121,value:232},
+        {name:"income",expence:21,value:23},
+        {name:"expence",expence:121,value:22},
+        {name:"expence",expence:12,value:2},
+        {name:"income",expence:1214,value:232}
+    ]
     
     return (
         <DAS>
@@ -13,6 +25,7 @@ export default function Dashboard(){
 
         <div>
             <h2>Chart</h2>
+            <Chart data={chartData}/>
         </div>
         <div className="leftCards">
             <div className="Cards">
@@ -115,12 +128,11 @@ const DAS = styled.div`
 .leftCards{
     display:flex;
     justify-content:space-between;
-    background-color:red;
     width:150%;
 }
 
 .Cards{
-    background-color:green;
+    background-color:#B2EBF2;
     width:40%;
 }
 
