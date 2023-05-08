@@ -26,3 +26,15 @@ dispatch({type:REMOVEINCOME,payload:data})
 }
 
 
+export const putUser=(data)=>(dispatch)=>{
+
+ return axios.put("http://localhost:8080/userData/1",data)
+ .then((res)=>{
+  console.log(res)
+ })
+ .catch((error)=>{
+  console.log(error)
+ })
+  
+}
+
