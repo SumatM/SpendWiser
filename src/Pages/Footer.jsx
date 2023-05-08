@@ -5,12 +5,13 @@ const Footer = () => {
   return (
     <Box
       as="footer"
-      bg="blue.300"
+      bg="white.300"
       borderTop="1px solid"
       borderColor="gray.300"
       py="2.5rem"
       fontSize="0.875rem"
       marginTop={50}
+      id="Support"
     >
       <Box
         maxW="64rem"
@@ -67,7 +68,7 @@ const Footer = () => {
               <Link href="#" mr="0.5rem">
                 <svg
                   style={{ width: '1rem', height: '1rem' }}
-                  fill="#003494"
+                  fill="#125de9"
                   viewBox="0 0 32 32"
                   role="img"
                   aria-label="Navigate to Facebook"
@@ -82,7 +83,7 @@ const Footer = () => {
               <Link href="#" mr="0.5rem">
                 <svg
                   style={{ width: '1rem', height: '1rem' }}
-                  fill="#2257b9"
+                  fill="#1347d8"
                   viewBox="0 0 32 32"
                   role="img"
                   aria-label="Navigate to Twitter"
@@ -97,7 +98,7 @@ const Footer = () => {
               <Link href="#" mr="0.5rem">
                 <svg
                   style={{ width: '1rem', height: '1rem' }}
-                  fill="#008F94"
+                  fill="#f01456"
                   viewBox="0 0 24 24"
                   role="img"
                   aria-label="Navigate to Instagram"
@@ -120,7 +121,7 @@ const Footer = () => {
       </Box>
       <Flex maxW="64rem" mx="auto" alignItems="center" px={10}>
         <svg
-          fill="#008F94"
+          fill="#cea317"
           style={{ width: '1.25rem', height: '1.25rem' }}
           viewBox="0 0 1000 1000"
           role="presentation"
@@ -149,7 +150,7 @@ const LinkItem = ({ text, isTag = false, tagText }: LinkItemProps) => {
       <Link
         fontWeight="600"
         href="#"
-        color="#2170a5"
+        color="#d6e1e9"
         _hover={{ color: 'green.600' }}
       >
         {text}

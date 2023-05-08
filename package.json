@@ -31,8 +31,10 @@
     "recharts": "^2.5.0",
     "redux": "^4.2.1",
     "redux-thunk": "^2.4.2",
+    "react-toastify": "^9.1.2",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.10",
+    "toast": "^0.5.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
