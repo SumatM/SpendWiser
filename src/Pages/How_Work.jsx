@@ -8,7 +8,7 @@ export const How_Work = () => {
 
 
   return (
-    <DIV>
+    <DIV id="How_Work">
         <div id='bg1'>
             <h1>How It Works</h1>
             <p>Take control of your finances today – get started in minutes</p>
@@ -84,7 +84,7 @@ export const How_Work = () => {
                     <p><img width="3%" src="https://www.pngkit.com/png/full/1005-10058573_free-check-mark-transparent-background-clipart-hd-images.png" alt="" />Sync and backup your data on Google Drive</p>
                 </div>
                 <div>
-                <img width="80%" src="https://img.freepik.com/free-vector/blank-screen-laptop-gadget-icon-isolated-white-background_1308-46353.jpg" alt="" />
+                <img width="30%" src="https://img.freepik.com/free-vector/blank-screen-laptop-gadget-icon-isolated-white-background_1308-46353.jpg" alt="" />
                 </div>
                 </div>
             </div>
@@ -94,44 +94,51 @@ export const How_Work = () => {
           <div>
             <h1>Choosing ISaveMoney</h1>
             <p>iSaveMoney is the perfect app to create your personal or family budget, making your life easier and putting you in control of your money. Discover your spending habits or export your budgets in CSV, Excel or PDF formats to send to a tax professional</p>
-            <a href="https://www.youtube.com/watch?v=rzgYVQ7S5jo"><img width="70%" src="https://st4.depositphotos.com/1008801/29556/v/600/depositphotos_295568130-stock-illustration-video-concept-people-using-mobile.jpg" alt="" /></a>
+            <a href="https://www.youtube.com/watch?v=rzgYVQ7S5jo" target='blank' ><img width="70%" src="https://st4.depositphotos.com/1008801/29556/v/600/depositphotos_295568130-stock-illustration-video-concept-people-using-mobile.jpg" alt="" /></a>
           </div>
           <div className='rating'>
 
             <div>
-              <img width="60%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStDzel6-EFGPhyvixvmaaa9cOcAkJsCmLOcRnq6IqZ6aMhvOopEfiX8DRvkYH1W8nQZhg&usqp=CAU" alt="" />
+              <img width="30%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStDzel6-EFGPhyvixvmaaa9cOcAkJsCmLOcRnq6IqZ6aMhvOopEfiX8DRvkYH1W8nQZhg&usqp=CAU" alt="" />
               <h1>220000+</h1>
               <h4>Active User</h4>
             </div>
 
             <div>
-              <img width="60%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeFNgXxCEodSufW5RS37wi6vynve-NAYQNAA&usqp=CAU" alt="" />
+              <img width="30%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeFNgXxCEodSufW5RS37wi6vynve-NAYQNAA&usqp=CAU" alt="" />
               <h1>220000+</h1>
               <h4>Active User</h4>
             </div>
 
             <div>
-              <img width="60%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSke-TbHuZzp48FGAvuoYCQ3TGXBdtEsrqxob86ConPvRxGRo9C9NgvKWlM46Mkw5klR8&usqp=CAU" alt="" />
+              <img width="30%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSke-TbHuZzp48FGAvuoYCQ3TGXBdtEsrqxob86ConPvRxGRo9C9NgvKWlM46Mkw5klR8&usqp=CAU" alt="" />
               <h1>220000+</h1>
               <h4>Active User</h4>
             </div>
            
           </div>
         </div>
-        <img src={Wave} alt="" />
+       
     </DIV>
   )
 }
 
 const DIV=styled.div`
-   
+     background-color:#0099ff;
+      margin-top:-50px;
+      color: white;
+      font-family: 'DynaPuff', cursive;
+font-family: 'Fira Code', monospace;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Open Sans', sans-serif;
     .HowBaneer1{
         display: flex;
         flex-direction:row;
         margin: auto;
         align-items: center;
         padding: 5%;
-        width: 95%;
+        width: 90%;
+      
 
     }
     .flexit{
@@ -139,6 +146,7 @@ const DIV=styled.div`
         flex-direction:row;
        
     }
+
     .rating{
       display: flex;
       margin: auto;
@@ -146,5 +154,16 @@ const DIV=styled.div`
       margin-left: 22.5%;
       padding: 2%;
     }
+    @media (max-width: 768px) {
+    .HowBaneer1 {
+      flex-direction: column;
+      padding: 2%;
+    }
+
+    .rating {
+      margin-left: 0;
+    }
+  }
+  
    
 `

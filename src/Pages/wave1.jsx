@@ -1,12 +1,17 @@
 import React from 'react'
 import wave1 from "../images/wave1.svg"
+import styled from 'styled-components'
 
 export const Wave1 = () => {
   return (
-    <div>
+    <DIV>
         <img src={wave1} alt="" />
-    </div>
+    </DIV>
   )
 }
 
-// xnbvkjvnnnv
+const DIV=styled.div`
+  margin-bottom:0px;
+
+  width: 100%;
+`

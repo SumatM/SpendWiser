@@ -27,7 +27,7 @@ export default class SimpleSlider extends Component {
           
           </div>
 
-          <div>
+          <div className="posts">
           <p><img src="https://isavemoney.app/assets/images/team/3.png" alt="" /> <h2>Ratha Roy</h2></p>
            
           
@@ -36,7 +36,7 @@ export default class SimpleSlider extends Component {
    
           </div>
 
-          <div>
+          <div className="posts">
           <p><img src="https://isavemoney.app/assets/images/team/1.png" alt="" /> <h2>Atha Roy</h2></p>
            
           
@@ -45,7 +45,7 @@ export default class SimpleSlider extends Component {
    
           </div>
 
-          <div>
+          <div className="posts">
           <p><img src="https://isavemoney.app/assets/images/team/2.png" alt="" /> <h2>Natha Roy</h2></p>
            
           

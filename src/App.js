@@ -1,4 +1,5 @@
 import './App.css';
+
 // import { IncomeForm } from './Income/IncomeForm';
 import { Contact } from './Pages/Contact';
 import Dashboard from './Pages/DashBoard/Dashboard';
@@ -13,11 +14,14 @@ import { Testimomials } from './Pages/Testimomials';
 import Footer from './Pages/Footer';
 import { Wave } from './Pages/wave';
 import { Wave1 } from './Pages/wave1';
+import { Landingpage } from './Pages/Landingpage';
+
 
 
 function App() {
   return (
     <div className="App">
+
 
 {/* <IncomeForm/> */}
 
@@ -38,6 +42,7 @@ function App() {
    <Contact/>
    <Support/>
    <Footer/>
+    <Landingpage/>
     </div>
   );
 }

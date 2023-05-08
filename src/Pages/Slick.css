@@ -3,6 +3,8 @@
     margin: auto;
     border: 3px solid blue;
    padding: 2%;
+   background-color: rgb(97, 178, 231);
+   color: white;
    
    
 }
@@ -18,3 +20,32 @@
     justify-content: space-around;
    
 }
+.slider button{
+   
+    margin: auto;
+}
+.posts h2{
+    color: rgb(24, 57, 202);
+}
+.posts h4{
+    color: rgb(202, 24, 24);
+}
+.posts p{
+    color: rgb(9, 10, 10);
+}
+
+@media (max-width: 768px) {
+    .slider {
+      width: 80%;
+      padding: 5%;
+    }
+  
+    .slider img {
+      width: 100%;
+      margin-right: 0;
+    }
+  
+    .posts div {
+      flex-wrap: wrap;
+    }
+  }
