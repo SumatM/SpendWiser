@@ -91,6 +91,9 @@ export default function Dashboard(){
 
 const DAS = styled.div`
 
+margin-top:75px;
+
+text-align:center;
 
 .mainBox{
     display:flex;
