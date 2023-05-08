@@ -2,14 +2,13 @@
 
 import React, { useEffect, useState} from 'react'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
-import { getIncomeData } from '../redux/budgetReducer/action';
-import { IncomeForm } from './IncomeForm';
-import { IncomeItem } from './IncomeItem';
+import { getExpenseData } from '../redux/budgetExpenseReducer/action';
+import { ExpenseForm } from './ExpenseForm';
+import { ExpenseItem } from './ExpenseItem';
 
 
 
-
-export function IncomeMain() {
+export function ExpenseMain() {
    const [update,setUpdate]=useState(false);
 
 
@@ -20,25 +19,25 @@ export function IncomeMain() {
 const dispatch=useDispatch();
 
     useEffect(() =>{
-        dispatch(getIncomeData())
+        dispatch(getExpenseData())
     }, [update])
 
 
 
-const {loading,incomeData,error}=useSelector((store)=>{
+const {loading,expenseData,error}=useSelector((store)=>{
     return {
-        loading:store.budgetReducer.isLoading,
-        incomeData:store.budgetReducer.userIncome,
-        error:store.budgetReducer.isError,
+        loading:store.expenseReducer.isLoading,
+        expenseData:store.expenseReducer.userExpense,
+        error:store.expenseReducer.isError,
     }
 },shallowEqual);
 
+console.log(expenseData);
 
-
-const totalIncome=()=>{
+const totalExpense=()=>{
     let totalAmount=0;
-      if(incomeData.income!=undefined){
-        incomeData.income.forEach((item)=>{
+      if(expenseData.expense!=undefined){
+        expenseData.expense.forEach((item)=>{
 totalAmount=totalAmount+item.amount;
         })
       }
@@ -47,16 +46,16 @@ totalAmount=totalAmount+item.amount;
 
     return (
         <div>
-                <h1>Incomes</h1>
-                <h2 className="total-income">Total Income: ₹<span>{totalIncome()}</span></h2>
-                <div className="income-content">
+                <h1>Expenses</h1>
+                <h2 className="total-expense">Total Expense: ₹<span>{totalExpense()}</span></h2>
+                <div className="expense-content">
                     <div className="form-container">
-                        <IncomeForm  update={updateFunc}/>
+                        <ExpenseForm update={updateFunc}/>
                     </div>
-                    <div className="incomes">
-                        {incomeData?.income?.map((income) => {
-                            const {id, title, amount, date, category, description} = income;
-                            return <IncomeItem
+                    <div className="expense">
+                        {expenseData?.expense?.map((expense) => {
+                            const {id, title, amount, date, category, description} = expense;
+                            return <ExpenseItem
                                 key={id}
                                 id={id} 
                                 title={title} 

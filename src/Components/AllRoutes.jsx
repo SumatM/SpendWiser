@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../Pages/DashBoard/Dashboard";
-import Income from "../Income/Income";
-import Expense from "../Pages/DashBoard/Expense/Expense";
+
+import { IncomeMain } from "../Income/IncomeMain";
+import {ExpenseMain} from "../expense/ExpenseMain";
 
 
 function AllRoutes(){
-
     return (
         <Routes>
             <Route path="/dashboard" element={<Dashboard/>}></Route>
-            <Route path="/income" element={<Income/>}></Route>
-            <Route path="/expense" element={<Expense/>}></Route>
+            <Route path="/income" element={<IncomeMain/>}></Route>
+            <Route path="/expense" element={<ExpenseMain/>}></Route>
         </Routes>
     )
 }

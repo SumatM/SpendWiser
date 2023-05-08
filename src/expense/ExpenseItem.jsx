@@ -1,12 +1,11 @@
 
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux'
-import { putUser, removeIncome } from '../redux/budgetReducer/action';
+import { PutUser, removeExpense } from '../redux/budgetExpenseReducer/action';
 
 
 
-
-export function IncomeItem({
+export function ExpenseItem({
     id,
     title,
     amount,
@@ -18,22 +17,22 @@ export function IncomeItem({
 
 const dispatch=useDispatch();
 
-    let income=useSelector((store)=>{
-        return store.budgetReducer.userIncome.income;
+    let expense=useSelector((store)=>{
+        return store.expenseReducer.userExpense.expense;
     })
 
-    const mydata=useSelector((store)=>{
-      return store.budgetReducer.userIncome;
+    let mydata=useSelector((store)=>{
+      return store.expenseReducer.userExpense;
   })
    
   const remove=(id)=>{
     console.log("yes")
-     income=income.filter((item)=>item.id!=id);
-     let data=income;
-    dispatch(removeIncome(data));
+     expense=expense.filter((item)=>item.id!=id);
+     let data=expense;
+    dispatch(removeExpense(data));
     
-    dispatch(putUser(mydata)).then((res)=>{
-      update();
+    dispatch(PutUser(mydata)).then((res)=>{
+      update()
     })
   }
 

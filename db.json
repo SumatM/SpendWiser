@@ -1,14 +1,30 @@
 {
   "userData": [
-    { "id": 1, 
-    "name": "Shrinivas Katkamwar", 
-    "email": "sinnu1908@gmail.com",
-    "mobile":9156666233,
-    "password":"Shri@123",
-    "income":[],
-    "expense":[]
+    {
+      "id": 1,
+      "name": "Shrinivas Katkamwar",
+      "email": "sinnu1908@gmail.com",
+      "mobile": 9156666233,
+      "password": "Shri@123",
+      "income": [],
+      "expense": [
+        {
+          "id": 1683585045389,
+          "title": "jdkjkjcjk",
+          "amount": 787,
+          "date": "2023-05-19T18:30:00.000Z",
+          "category": "transportation",
+          "description": "ncnklhjn"
+        },
+        {
+          "id": 1683585413187,
+          "title": "jdjkjdfjk",
+          "amount": 123,
+          "date": "2023-05-24T18:30:00.000Z",
+          "category": "food",
+          "description": "vnmdjkjl"
+        }
+      ]
     }
   ]
 }
-
-
