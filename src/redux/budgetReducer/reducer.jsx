@@ -1,10 +1,12 @@
-import { FAILUREHISTORY, GETHISTORY, SUCCESSEXPENSEHISTORY, SUCCESSINCOMEHISTORY } from "./actionType"
+import { ADDINCOMEDATA, FAILUREHISTORY, GETHISTORY, REMOVEINCOME, REMOVEINCOMEDATA, SUCCESSEXPENSEHISTORY, SUCCESSINCOMEHISTORY } from "./actionType"
 
 const initialState={
     isLoading:false,
-    isError:true,
-    incomeHistory:[],
-    expenseHistory:[],
+    isError:false,
+    userIncome:{},
+    incomeArray:[],
+    expenseArray:[],
+    userExpense:{},
 }
 
 
@@ -17,17 +19,28 @@ export const reducer=(state=initialState,{type,payload})=>{
         }
 
         case SUCCESSINCOMEHISTORY:{
-            return {...state,isLoading:false,incomeHistory:payload}
+            return {...state,isLoading:false,userIncome:payload}
         }
         
         case SUCCESSEXPENSEHISTORY:{
-            return {...state,isLoading:false,expenseHistory:payload}
+            return {...state,isLoading:false,userExpense:payload}
         }
 
         case FAILUREHISTORY:{
             return {...state,isLoading:false,isError:true}
         }
         
+        case ADDINCOMEDATA:{
+           state.incomeArray=[...state.userIncome.income, payload];
+           state.userIncome.income=state.incomeArray;
+           return {...state}
+        }
+
+        case REMOVEINCOME:{
+            state.incomeArray=payload;
+            state.userIncome.income=state.incomeArray;
+            return {...state}
+        }
         default:{
             return state;
         }
