@@ -14,6 +14,7 @@ import { Testimomials } from './Pages/Testimomials';
 import Footer from './Pages/Footer';
 import { Wave } from './Pages/wave';
 import { Wave1 } from './Pages/wave1';
+import AllRoutes from './Components/AllRoutes';
 import { Landingpage } from './Pages/Landingpage';
 
 
@@ -42,6 +43,7 @@ function App() {
    <Contact/>
    <Support/>
    <Footer/>
+   <AllRoutes/>
     <Landingpage/>
     </div>
   );
