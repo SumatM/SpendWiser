@@ -1,6 +1,6 @@
 import './App.css';
 
-// import { IncomeForm } from './Income/IncomeForm';
+import { IncomeMain } from './Income/IncomeMain';
 import { Contact } from './Pages/Contact';
 import Dashboard from './Pages/DashBoard/Dashboard';
 import { Features } from './Pages/Features';
@@ -22,27 +22,7 @@ import { Landingpage } from './Pages/Landingpage';
 function App() {
   return (
     <div className="App">
-
-
-{/* <IncomeForm/> */}
-
-   <Navbar/>
-   <Home/>
-   <Wave/>
-   <Features/>
-   <Wave1/>
-   <How_Work/>
-  
-   <Screen_Shoots/>
-   <Wave1/>
-   <Testimomials/>
-   <Wave/>
-   
-   <Wave1/>
-   <Pricing/>
-   <Contact/>
-   <Support/>
-   <Footer/>
+<IncomeMain/>
    <AllRoutes/>
     <Landingpage/>
     </div>
