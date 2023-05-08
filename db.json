@@ -5,18 +5,10 @@
     "email": "sinnu1908@gmail.com",
     "mobile":9156666233,
     "password":"Shri@123",
-    "income":[
-        {"id":12341234,"title":"Salary","amount":5000,"category":"Salary","description":"my May's salary"}
-    ]
-    },
-        { "id": 2, 
-    "name": "sbk", 
-    "email": "sinnu1908@gmail.com",
-    "mobile":9156666233,
-    "password":"Shri@123",
-    "income":[
-        {"id":12341234,"title":"Salary","amount":5000,"category":"Salary","description":"my May's salary"}
-    ]
+    "income":[],
+    "expense":[]
     }
   ]
 }
+
+

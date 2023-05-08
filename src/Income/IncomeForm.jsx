@@ -3,23 +3,15 @@ import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector } from 'react-redux';
-import { getIncomeData } from '../redux/budgetReducer/action';
+import { addIncomeData } from '../redux/budgetReducer/action';
 
-
-
-export function IncomeForm() {
-const dispatch=useDispatch()
-    useEffect(()=>{
-         dispatch(getIncomeData());
-    },[])
-
+export function IncomeForm({update}) {
+   
+    const dispatch=useDispatch();
 
     const incomeData=useSelector((store)=>{
         return store.budgetReducer.incomeHistory;
     })
-
-    console.log(incomeData);
-
 
     const [inputState, setInputState] = useState({
         title: '',
@@ -37,11 +29,20 @@ const dispatch=useDispatch()
     }
 
 
+
     const handleSubmit = e => {
         e.preventDefault();
 
-        console.log(inputState);
-       
+        let obj={
+            id:new Date().getTime(),
+            title,
+            amount:+amount,
+            date,
+            category,
+            description,
+        }
+
+      dispatch(addIncomeData(obj))
        
         setInputState({
             title: '',
@@ -49,7 +50,10 @@ const dispatch=useDispatch()
             date: '',
             category: '',
             description: '',
-        })
+        });
+
+        update();
+
     }
 
     return (
