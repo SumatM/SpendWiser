@@ -1,7 +1,6 @@
 
 
 import React, { useEffect, useState} from 'react'
-import styled from 'styled-components'
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getIncomeData } from '../redux/budgetReducer/action';
 import { IncomeForm } from './IncomeForm';
@@ -12,7 +11,7 @@ import { IncomeItem } from './IncomeItem';
 
 export function IncomeMain() {
    const [update,setUpdate]=useState(false);
-//    const [totalAmount,setTotalAmount]=useState("")
+
 
    const updateFunc=()=>{
        setUpdate((prev)=>!prev);
@@ -22,7 +21,7 @@ const dispatch=useDispatch();
 
     useEffect(() =>{
         dispatch(getIncomeData())
-    }, [])
+    }, [update])
 
 
 

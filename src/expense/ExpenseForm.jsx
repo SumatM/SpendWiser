@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
-import styled from 'styled-components'
+import React, {useState } from 'react'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
-import { useDispatch, useSelector } from 'react-redux';
-import { addIncomeData, putUser } from '../redux/budgetReducer/action';
+import { useDispatch, useSelector} from 'react-redux';
+import { PutUser, addExpenseData } from '../redux/budgetExpenseReducer/action';
 
-export function IncomeForm({update}) {
+
+export function ExpenseForm({update}) {
    
     const dispatch=useDispatch();
-    const mydata=useSelector((store)=>{
-        return store.budgetReducer.userIncome;
+
+    let mydata=useSelector((store)=>{
+        return store.expenseReducer.userExpense;
     })
+
+
     const [inputState, setInputState] = useState({
         title: '',
         amount: '',
@@ -29,6 +32,7 @@ export function IncomeForm({update}) {
 
 
     const handleSubmit = e => {
+        console.log("yes")
         e.preventDefault();
 
         let obj={
@@ -40,7 +44,7 @@ export function IncomeForm({update}) {
             description,
         }
 
-      dispatch(addIncomeData(obj))
+      dispatch(addExpenseData(obj))
        
         setInputState({
             title: '',
@@ -50,21 +54,32 @@ export function IncomeForm({update}) {
             description: '',
         });
 
-        dispatch(putUser(mydata)).then((res)=>{
-            update();
-        })
+      
+
+    console.log(mydata);
+
+     dispatch(PutUser(mydata)).then((res)=>{
+        update();
+     })
 
     }
 
+    
+
+
+
+
+
     return (
-        <FormStyled onSubmit={handleSubmit}>
-        <form>
-        <div className="input-control">
+        <div>
+        <form onSubmit={handleSubmit}>
+
+            <div className="input-control">
                 <input 
                     type="text" 
                     value={title}
                     name={'title'} 
-                    placeholder="Salary Title"
+                    placeholder="Expense Title"
                     onChange={handleInput('title')}
                     required
                 />
@@ -73,7 +88,7 @@ export function IncomeForm({update}) {
                 <input value={amount}  
                     type="number" 
                     name={'amount'} 
-                    placeholder={'Salary Amount'}
+                    placeholder={'Expense Amount'}
                     onChange={handleInput('amount')} 
                     required
                 />
@@ -93,10 +108,12 @@ export function IncomeForm({update}) {
             <div className="selects input-control">
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                     <option value=""  disabled >Select Option</option>
-                    <option value="salary">Salary</option>
-                    <option value="freelancing">Freelancing</option>
-                    <option value="investments">Investments</option> 
-                    <option value="parttime">Part-Time Job</option>
+                    <option value="recharge">Recharge</option>
+                    <option value="shopping">Shopping</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="transportation">Transportation</option> 
+                    <option value="medicalHealthcare">Medical & Healthcare</option>
+                    <option value="food">Food</option>
                     <option value="other">Other</option>  
                 </select>
             </div>
@@ -105,54 +122,15 @@ export function IncomeForm({update}) {
                 <textarea name="description" value={description} placeholder='Add A Reference' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
             </div>
             <div className="submit-btn">
-                <button type="submit">Add Income</button>
+                <button type="submit">Add Expense</button>
             </div>
         </form>
-            
-        </FormStyled>
+        </div>
     )
 }
 
 
-const FormStyled = styled.form`
-    display:flex;
-    
 
-    form{
-    margin: auto;
-    width:70%;
-    }
-
-    form>div{
-        margin-top:15px;
-    }
-
-    input{
-        padding:15px;
-        width:80%;
-    }
-
-    select {
-        padding:15px;
-        width:87%; 
-    }
-
-    textarea{
-        padding:10px;
-        width:83%; 
-    }
-
-    .submit-btn{
-        display:flex;
-        justify-content:center;
-    }
-    button{
-        padding:15px;
-        background-color:black;
-        color:white;
-        font-size:15px;
-    }
-`;
 
 
 
