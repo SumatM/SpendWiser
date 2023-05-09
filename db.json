@@ -6,7 +6,32 @@
       "email": "sinnu1908@gmail.com",
       "mobile": 9156666233,
       "password": "Shri@123",
-      "income": [],
+      "income": [
+        {
+          "id": 1683641183116,
+          "title": "salary",
+          "amount": 80000,
+          "date": "2023-05-11T18:30:00.000Z",
+          "category": "freelancing",
+          "description": "job salary"
+        },
+        {
+          "id": 1683641356456,
+          "title": "jdskjkljlkjkc",
+          "amount": 5654,
+          "date": "2023-05-18T18:30:00.000Z",
+          "category": "investments",
+          "description": "fsdsffsd"
+        },
+        {
+          "id": 1683641374902,
+          "title": "clkkldjskjioeuiu",
+          "amount": 4546,
+          "date": "2023-05-12T18:30:00.000Z",
+          "category": "salary",
+          "description": "ghghfj"
+        }
+      ],
       "expense": [
         {
           "id": 1683585045389,
@@ -23,6 +48,14 @@
           "date": "2023-05-24T18:30:00.000Z",
           "category": "food",
           "description": "vnmdjkjl"
+        },
+        {
+          "id": 1683641786849,
+          "title": "dfsd",
+          "amount": 345,
+          "date": "2023-05-10T18:30:00.000Z",
+          "category": "medicalHealthcare",
+          "description": "dfscsd"
         }
       ]
     }
