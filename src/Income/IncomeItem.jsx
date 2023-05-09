@@ -1,5 +1,7 @@
 
-import React from 'react';
+
+import React from 'react'
+import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { putUser, removeIncome } from '../redux/budgetReducer/action';
 
@@ -16,6 +18,7 @@ export function IncomeItem({
     update,
 }) {
 
+
 const dispatch=useDispatch();
 
     let income=useSelector((store)=>{
@@ -27,17 +30,13 @@ const dispatch=useDispatch();
   })
    
   const remove=(id)=>{
-    console.log("yes")
+   // console.log("yes")
      income=income.filter((item)=>item.id!=id);
      let data=income;
+     
     dispatch(removeIncome(data));
-    
-    dispatch(putUser(mydata)).then((res)=>{
-      update();
-    })
+    update();
   }
-
-
 
 return <>
 
@@ -47,10 +46,14 @@ return <>
      <h2>{category}</h2>
      <h2>{description}</h2>
      <button onClick={()=>remove(id)}>Remove</button>
-    </div>
-</>
+</ItemDiv>
 
 
 }
 
-   
+const ItemDiv  = styled.div`
+
+    display:flex;
+    margin: 15px;
+    justify-content:space-between;
+`;

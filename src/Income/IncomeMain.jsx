@@ -25,7 +25,8 @@ const dispatch=useDispatch();
 
 
 
-const {loading,incomeData,error}=useSelector((store)=>{
+
+let {loading,incomeData,error}=useSelector((store)=>{
     return {
         loading:store.budgetReducer.isLoading,
         incomeData:store.budgetReducer.userIncome,
@@ -46,14 +47,23 @@ totalAmount=totalAmount+item.amount;
 }
 
     return (
-        <div>
+        <DIV>
+                <div className='title'>
                 <h1>Incomes</h1>
                 <h2 className="total-income">Total Income: ₹<span>{totalIncome()}</span></h2>
+                </div>
+                <div className="income-contents">
                 <div className="income-content">
-                    <div className="form-container">
                         <IncomeForm  update={updateFunc}/>
-                    </div>
-                    <div className="incomes">
+                </div>
+                <div className="incomes">
+                <div className='itemShow'>
+                <h2>Name</h2>
+                <h2>Amount</h2>
+                <h2>Category</h2>
+                <h2>Description</h2>
+                <h2>Remove</h2>
+                </div>
                         {incomeData?.income?.map((income) => {
                             const {id, title, amount, date, category, description} = income;
                             return <IncomeItem
@@ -67,12 +77,58 @@ totalAmount=totalAmount+item.amount;
                                 update={updateFunc}
                             />
                         })}
-                    </div>
                 </div>
-        </div>
+                </div>
+        </DIV>
     )
 }
 
+
+const DIV = styled.div`
+    margin-top:75px;
+
+    .title{
+        text-align:center;
+    }
+    .title >h1{
+        letter-spacing:3px;
+        font-size:45px;
+        margin-bottom:0px
+    }
+
+    .title > h2{
+        margin-top:0px
+    }
+
+    .income-contents{
+        display:flex;
+    }
+
+    .income-content{  
+        width:50%
+    }
+
+
+    .incomes{
+        width:50%;
+        background-color:whitesmoke;
+        padding:15px;
+    }
+
+    .itemShow{
+        display:flex;
+        justify-content:space-around
+    }
+    .itemShow >h2{
+        border:1px solid gray;
+        padding:7px;
+        margin: 0 10px;
+        background-color: gray;
+        color:white;
+        font-weight:500;
+    }
+
+`;
 
 
 

@@ -1,16 +1,12 @@
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../Pages/DashBoard/Dashboard";
-
-import { IncomeMain } from "../Income/IncomeMain";
-import {ExpenseMain} from "../expense/ExpenseMain";
+import { Landingpage } from "../Pages/Landingpage";
 
 
 function AllRoutes(){
     return (
         <Routes>
-            <Route path="/dashboard" element={<Dashboard/>}></Route>
-            <Route path="/income" element={<IncomeMain/>}></Route>
-            <Route path="/expense" element={<ExpenseMain/>}></Route>
+        <Route path="/" element={<Landingpage/>}></Route>
         </Routes>
     )
 }

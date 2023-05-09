@@ -58,8 +58,8 @@ export function IncomeForm({update}) {
 
     return (
         <FormStyled onSubmit={handleSubmit}>
-    
-            <div className="input-control">
+        <form>
+        <div className="input-control">
                 <input 
                     type="text" 
                     value={title}
@@ -107,48 +107,50 @@ export function IncomeForm({update}) {
             <div className="submit-btn">
                 <button type="submit">Add Income</button>
             </div>
+        </form>
+            
         </FormStyled>
     )
 }
 
 
 const FormStyled = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    input, textarea, select{
-        outline: none;
-        border: none;
-        padding: .5rem 1rem;
-        border-radius: 5px;
-        border: 2px solid #fff;
-        background: transparent;
-        resize: none;
-        box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.06);
-        color: rgba(34, 34, 96, 0.9);
-        &::placeholder{
-            color: rgba(34, 34, 96, 0.4);
-        }
+    display:flex;
+    
+
+    form{
+    margin: auto;
+    width:70%;
     }
-    .input-control{
-        input{
-            width: 100%;
-        }
+
+    form>div{
+        margin-top:15px;
     }
-    .selects{
-        display: flex;
-        justify-content: flex-end;
-        select{
-            color: rgba(34, 34, 96, 0.4);
-            &:focus, &:active{
-                color: rgba(34, 34, 96, 1);
-            }
-        }
+
+    input{
+        padding:15px;
+        width:80%;
     }
+
+    select {
+        padding:15px;
+        width:87%; 
+    }
+
+    textarea{
+        padding:10px;
+        width:83%; 
+    }
+
     .submit-btn{
-        button{
-           
-        }
+        display:flex;
+        justify-content:center;
+    }
+    button{
+        padding:15px;
+        background-color:black;
+        color:white;
+        font-size:15px;
     }
 `;
 
