@@ -5,7 +5,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getIncomeData } from '../redux/budgetReducer/action';
 import { IncomeForm } from './IncomeForm';
 import { IncomeItem } from './IncomeItem';
-
+import styled from 'styled-components';
 
 
 

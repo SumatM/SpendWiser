@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Dashboard from "../Pages/DashBoard/Dashboard";
-import Expense from "../Pages/DashBoard/Expense/Expense";
 import { IncomeMain } from "../Income/IncomeMain";
+import { ExpenseMain } from "../expense/ExpenseMain";
 
 
 function PrivateRoute(){
@@ -10,10 +10,9 @@ function PrivateRoute(){
         <Routes>
             <Route path="/dashboard" element={<Dashboard/>}></Route>
             <Route path="/income" element={<IncomeMain/>}></Route>
-            <Route path="/expense" element={<Expense/>}></Route>
+            <Route path="/expense" element={<ExpenseMain/>}></Route>
         </Routes>
     )
 }
-
 
 export default PrivateRoute;

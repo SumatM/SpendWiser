@@ -57,8 +57,9 @@ export function IncomeForm({update}) {
     }
 
     return (
-        <FormStyled onSubmit={handleSubmit}>
-        <form>
+       <DIV>
+        <form onSubmit={handleSubmit}>
+
         <div className="input-control">
                 <input 
                     type="text" 
@@ -69,6 +70,7 @@ export function IncomeForm({update}) {
                     required
                 />
             </div>
+
             <div className="input-control">
                 <input value={amount}  
                     type="number" 
@@ -78,6 +80,7 @@ export function IncomeForm({update}) {
                     required
                 />
             </div>
+
             <div className="input-control">
                 <DatePicker 
                     id='date'
@@ -87,9 +90,10 @@ export function IncomeForm({update}) {
                     onChange={(date) => {
                         setInputState({...inputState, date: date})
                     }}
-                    required
+
                 />
             </div>
+
             <div className="selects input-control">
                 <select required value={category} name="category" id="category" onChange={handleInput('category')}>
                     <option value=""  disabled >Select Option</option>
@@ -109,12 +113,12 @@ export function IncomeForm({update}) {
             </div>
         </form>
             
-        </FormStyled>
+        </DIV>
     )
 }
 
 
-const FormStyled = styled.form`
+const DIV = styled.div`
     display:flex;
     
 

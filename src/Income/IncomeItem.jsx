@@ -46,14 +46,6 @@ return <>
      <h2>{category}</h2>
      <h2>{description}</h2>
      <button onClick={()=>remove(id)}>Remove</button>
-</ItemDiv>
-
-
+</div>
+</>
 }
-
-const ItemDiv  = styled.div`
-
-    display:flex;
-    margin: 15px;
-    justify-content:space-between;
-`;
