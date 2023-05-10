@@ -7,7 +7,12 @@ import { addIncomeData, putUser } from '../redux/budgetReducer/action';
 
 export function IncomeForm({update}) {
    
+    const userId=useSelector((store)=>{
+          return store.AuthReducer.userData.id;
+    });
+
     const dispatch=useDispatch();
+
     const mydata=useSelector((store)=>{
         return store.budgetReducer.userIncome;
     })
@@ -20,6 +25,8 @@ export function IncomeForm({update}) {
     })
 
     const { title, amount, date, category,description } = inputState;
+
+    
 
     const handleInput = name => e => {
 
@@ -50,7 +57,7 @@ export function IncomeForm({update}) {
             description: '',
         });
 
-        dispatch(putUser(mydata)).then((res)=>{
+        dispatch(putUser(mydata)(userId)).then((res)=>{
             update();
         })
 

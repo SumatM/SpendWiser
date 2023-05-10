@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser } from "../Redux/AuthReducer/action";
+import { Navigate, useNavigate } from "react-router-dom";
 import axios from "axios";
+
 import {
   Box,
   Button,
@@ -19,10 +20,14 @@ let initialValue = {
   email: "",
   password: "",
   confirmPassword: "",
+  income:[],
+  expense:[],
+
 };
 
 const SignUp = () => {
-  const dispatch = useDispatch();
+  const navigate=useNavigate();
+  // const dispatch = useDispatch();
   const { isLoading, isError } = useSelector((state) => state);
   const toast = useToast();
 
@@ -48,13 +53,25 @@ const SignUp = () => {
       });
       return;
     }
-    dispatch(addUser());
+    // dispatch(addUser());
+
+    console.log(formValues)
     try {
-      await axios.post("https://big-basket-api.onrender.com/Users", {
+      await axios.post("http://localhost:8080/userData", {
         name: formValues.name,
         email: formValues.email,
         password: formValues.password,
+        income:[],
+        expense:[],
+
+      })
+      .then((res)=>{
+        if(res.status===201){
+          alert("Sign up Successfull, Please Login")
+          navigate("/login");
+        }
       });
+
       toast({
         position: "top",
         title: "Sign up successful!",
