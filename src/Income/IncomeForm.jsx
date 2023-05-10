@@ -24,8 +24,8 @@ export function IncomeForm({update}) {
     const handleInput = name => e => {
 
         setInputState({...inputState, [name]: e.target.value}) 
+        console.log(inputState);
     }
-
 
 
     const handleSubmit = e => {
@@ -39,6 +39,8 @@ export function IncomeForm({update}) {
             category,
             description,
         }
+
+        console.log(obj);
 
       dispatch(addIncomeData(obj))
        

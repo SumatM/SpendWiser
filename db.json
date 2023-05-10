@@ -8,54 +8,46 @@
       "password": "Shri@123",
       "income": [
         {
-          "id": 1683641183116,
-          "title": "salary",
-          "amount": 80000,
-          "date": "2023-05-11T18:30:00.000Z",
-          "category": "freelancing",
-          "description": "job salary"
-        },
-        {
-          "id": 1683641356456,
-          "title": "jdskjkljlkjkc",
-          "amount": 5654,
-          "date": "2023-05-18T18:30:00.000Z",
-          "category": "investments",
-          "description": "fsdsffsd"
-        },
-        {
           "id": 1683641374902,
           "title": "clkkldjskjioeuiu",
           "amount": 4546,
           "date": "2023-05-12T18:30:00.000Z",
           "category": "salary",
           "description": "ghghfj"
+        },
+        {
+          "id": 1683642534136,
+          "title": "asdfasd",
+          "amount": 344,
+          "date": "2023-05-25T18:30:00.000Z",
+          "category": "freelancing",
+          "description": "asdf"
+        },
+        {
+          "id": 1683655845703,
+          "title": "efsadf",
+          "amount": 234,
+          "date": "2023-05-23T18:30:00.000Z",
+          "category": "salary",
+          "description": "asdf"
+        },
+        {
+          "id": "Tue May 09 2023 23:43:39 GMT+0530 (India Standard Time)",
+          "title": "dfgdf",
+          "amount": 1,
+          "date": "2023-05-08T18:30:00.000Z",
+          "category": "investments",
+          "description": "asdfasd"
         }
       ],
       "expense": [
         {
-          "id": 1683585045389,
-          "title": "jdkjkjcjk",
-          "amount": 787,
-          "date": "2023-05-19T18:30:00.000Z",
-          "category": "transportation",
-          "description": "ncnklhjn"
-        },
-        {
-          "id": 1683585413187,
-          "title": "jdjkjdfjk",
-          "amount": 123,
-          "date": "2023-05-24T18:30:00.000Z",
-          "category": "food",
-          "description": "vnmdjkjl"
-        },
-        {
-          "id": 1683641786849,
-          "title": "dfsd",
-          "amount": 345,
-          "date": "2023-05-10T18:30:00.000Z",
-          "category": "medicalHealthcare",
-          "description": "dfscsd"
+          "id": 1683642546591,
+          "title": "asdf",
+          "amount": 23,
+          "date": "2023-05-09T18:30:00.000Z",
+          "category": "entertainment",
+          "description": "asd"
         }
       ]
     }

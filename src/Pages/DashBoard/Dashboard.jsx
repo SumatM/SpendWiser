@@ -1,17 +1,64 @@
+import { useEffect, useState } from 'react';
 import Chart from './../../Components/Chart'
 import styled from "styled-components"
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { getIncomeData } from '../../redux/budgetReducer/action';
 
 export default function Dashboard(){
 
+    const [update,setUpdate]=useState(false);
+
+
+   const updateFunc=()=>{
+       setUpdate((prev)=>!prev);
+   }
+
+const dispatch=useDispatch();
+
+   
+
+    let {loading,incomeData,error}=useSelector((store)=>{
+        return {
+            loading:store.budgetReducer.isLoading,
+            incomeData:store.budgetReducer.userIncome,
+            error:store.budgetReducer.isError,
+        }
+    },shallowEqual);
+
+    console.log(incomeData.income);
+
+    function chartDateFactory(date,income,expence){
+        let obj = {
+            name:date,
+            income,
+            expence
+        }
+        console.log(obj);
+    }
+
+    //retrive data from store();
+
+    useEffect(() =>{
+        dispatch(getIncomeData())
+        
+    }, [update])
 
     let chartData = [
-        {name:"income",income:121,value:232},
-        {name:"income",income:1291,value:232},
-        {name:"income",income:121,value:232},
-        {name:"income",expence:21,value:23},
-        {name:"expence",expence:121,value:22},
-        {name:"expence",expence:12,value:2},
-        {name:"income",expence:1214,value:232}
+        {
+            "name": "Page A",
+            "income": 4000,
+            "expence": 2400,
+          },
+          {
+            "name": "Page B",
+            "income": 3000,
+            "expence": 1398,
+          },
+          {
+            "name": "Page C",
+            "income": 2000,
+            "expence": 9800,
+          },
     ]
     
     return (

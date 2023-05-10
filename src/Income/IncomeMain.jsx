@@ -59,10 +59,9 @@ totalAmount=totalAmount+item.amount;
                 <div className="incomes">
                 <div className='itemShow'>
                 <h2>Name</h2>
+                <h2>Date</h2>
                 <h2>Amount</h2>
                 <h2>Category</h2>
-                <h2>Description</h2>
-                <h2>Remove</h2>
                 </div>
                         {incomeData?.income?.map((income) => {
                             const {id, title, amount, date, category, description} = income;

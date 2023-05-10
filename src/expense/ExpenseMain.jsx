@@ -5,6 +5,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getExpenseData } from '../redux/budgetExpenseReducer/action';
 import { ExpenseForm } from './ExpenseForm';
 import { ExpenseItem } from './ExpenseItem';
+import styled from 'styled-components';
 
 
 
@@ -45,14 +46,23 @@ totalAmount=totalAmount+item.amount;
 }
 
     return (
-        <div>
+        <DIV>
+                <div className='title'>
                 <h1>Expenses</h1>
                 <h2 className="total-expense">Total Expense: ₹<span>{totalExpense()}</span></h2>
+                </div>
                 <div className="expense-content">
                     <div className="form-container">
                         <ExpenseForm update={updateFunc}/>
                     </div>
                     <div className="expense">
+                        <div  className='itemShow'>
+                        <h2>Name</h2>
+                        <h2>Date</h2>
+                        <h2>Amount</h2>
+                        <h2>Category</h2>
+                        </div>
+                        <div>
                         {expenseData?.expense?.map((expense) => {
                             const {id, title, amount, date, category, description} = expense;
                             return <ExpenseItem
@@ -66,12 +76,59 @@ totalAmount=totalAmount+item.amount;
                                 update={updateFunc}
                             />
                         })}
+                        </div>
                     </div>
                 </div>
-        </div>
+        </DIV>
     )
 }
 
 
 
+
+const DIV = styled.div`
+    margin-top:75px;
+
+    .title{
+        text-align:center;
+    }
+    .title >h1{
+        letter-spacing:3px;
+        font-size:45px;
+        margin-bottom:0px
+    }
+
+    .title > h2{
+        margin-top:0px
+    }
+
+    .expense-content{
+        display:flex;
+        justify-content:space-between;
+    }
+
+    .form-container{
+        width:50%;
+    }
+
+    .expense{
+        background-color:whitesmoke;
+        padding:15px;
+        width:50%;
+    }
+
+    .itemShow{
+        display:flex;
+        justify-content:space-around
+    }
+    .itemShow >h2{
+        border:1px solid gray;
+        padding:7px;
+        margin: 0 10px;
+        color:white;
+        font-weight:500;
+        background-color: gray;
+    }
+
+`;
 
