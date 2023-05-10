@@ -6,12 +6,29 @@
       "password": "asd",
       "income": [
         {
-          "id": 1683690167866,
-          "title": "dsfsdfs",
-          "amount": 34,
-          "date": "2023-05-04T18:30:00.000Z",
+
+          "id": 1683641374902,
+          "title": "clkkldjskjioeuiu",
+          "amount": 4546,
+          "date": "2023-05-12T18:30:00.000Z",
+          "category": "salary",
+          "description": "ghghfj"
+        },
+        {
+          "id": 1683642534136,
+          "title": "asdfasd",
+          "amount": 344,
+          "date": "2023-05-25T18:30:00.000Z",
           "category": "freelancing",
-          "description": "dfdc"
+          "description": "asdf"
+        },
+        {
+          "id": 1683655845703,
+          "title": "efsadf",
+          "amount": 234,
+          "date": "2023-05-23T18:30:00.000Z",
+          "category": "salary",
+          "description": "asdf"
         },
         {
           "id": 1683691685101,
@@ -70,16 +87,17 @@
           "date": "2023-05-03T18:30:00.000Z",
           "category": "other",
           "description": "dfdsf"
+
         }
       ],
       "expense": [
         {
-          "id": 1683693251280,
-          "title": "dfdss",
-          "amount": 34,
-          "date": "2023-05-02T18:30:00.000Z",
-          "category": "shopping",
-          "description": "dfd"
+          "id": 1683642546591,
+          "title": "asdf",
+          "amount": 23,
+          "date": "2023-05-09T18:30:00.000Z",
+          "category": "entertainment",
+          "description": "asd"
         }
       ],
       "id": 4

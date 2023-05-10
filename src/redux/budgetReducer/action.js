@@ -3,7 +3,9 @@ import { ADDINCOMEDATA, FAILUREHISTORY, GETHISTORY, REMOVEINCOME, SUCCESSINCOMEH
 
 export const getIncomeData=(id)=>(dispatch)=>{
       dispatch({type:GETHISTORY});
+    return  axios.get("http://localhost:8080/userData/1")
       axios.get(`http://localhost:8080/userData/${id}`)
+
       .then((res)=>{
         console.log(res.data);
         dispatch({type:SUCCESSINCOMEHISTORY,payload:res.data})
@@ -38,3 +40,15 @@ console.log("yes")
   
 }
 
+function normalDate(isoDate) {
+  const date = new Date(isoDate);
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+
+  const normalDate = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
+  return normalDate;
+}
+
+export {normalDate}

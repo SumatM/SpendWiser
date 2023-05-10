@@ -3,6 +3,7 @@ import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
 import { useDispatch, useSelector} from 'react-redux';
 import { PutUser, addExpenseData } from '../redux/budgetExpenseReducer/action';
+import styled from 'styled-components';
 
 
 export function ExpenseForm({update}) {
@@ -27,6 +28,8 @@ export function ExpenseForm({update}) {
     })
 
     const { title, amount, date, category,description } = inputState;
+
+
 
     const handleInput = name => e => {
 
@@ -75,6 +78,8 @@ export function ExpenseForm({update}) {
 
 
     return (
+
+        <FormStyled>
         <DIV>
         <form onSubmit={handleSubmit}>
 
@@ -129,12 +134,54 @@ export function ExpenseForm({update}) {
                 <button type="submit">Add Expense</button>
             </div>
         </form>
+        </FormStyled>
         </DIV>
     )
 }
 
 
 
+const FormStyled = styled.form`
+    display:flex;
+    
+
+    form{
+    margin: auto;
+    width:70%;
+    }
+
+    form>div{
+        margin-top:15px;
+    }
+
+    input{
+        padding:15px;
+        width:80%;
+    }
+
+    select {
+        padding:15px;
+        width:88%; 
+    }
+
+    textarea{
+        padding:10px;
+        width:84%; 
+    }
+
+    .submit-btn{
+        display:flex;
+        justify-content:center;
+    }
+    button{
+        padding:15px;
+        background-color:black;
+        color:white;
+        font-size:15px;
+    }
+
+    
+`;
 
 
 
