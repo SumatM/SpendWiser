@@ -4,26 +4,35 @@ import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {IoMdClose} from 'react-icons/io'
+import logo from '../images/spendwiser-low-resolution-logo-color-on-transparent-background.png'
 
 const PrivateNav = () => {
     const [menuOpen,setMenuOpen]=useState(false)
     const handleClick=()=>{
         setMenuOpen((pre)=>!pre)
     }
+
+    
+
+
+    function handleLogout(){
+
+    }
+
   return (
     <DIV>
        <Left>
-        <img src="https://isavemoney.app/assets/images/isavemoney-logo.png" alt="logo"/>
+        <img src={logo} alt="logo"/>
        </Left>
        <Right>
        <NavLink to="/dashboard" className={({ isActive }) =>
     isActive ? "active" : "inactive"
   } ><h5>DashBoard</h5></NavLink>
-       <NavLink to='/recentTranaction' className={({ isActive }) =>
+       {/* <NavLink to='/recentTranaction' className={({ isActive }) =>
     isActive ? "active" : "inactive"
   } spy={true} smooth={true} >
         <h5>Recent Transactions</h5>
-       </NavLink>
+       </NavLink> */}
        <NavLink to='/income' className={({ isActive }) =>
     isActive ? "active" : "inactive"
   } spy={true} smooth={true} >
@@ -34,10 +43,10 @@ const PrivateNav = () => {
   } spy={true} smooth={true} >
         <h5>Expense</h5>
        </NavLink>
-       <NavLink to='/goals' className={({ isActive }) =>
+       <NavLink to='/' className={({ isActive }) =>
     isActive ? "active" : "inactive"
-  } spy={true} smooth={true} >
-        <h5>Goals</h5>
+  } spy={true} smooth={true} onClick={handleLogout}>
+        <h5>LogOut</h5>
        </NavLink>
 <MenuButton onClick={handleClick}>    
       {!menuOpen?<GiHamburgerMenu/>:<IoMdClose/>}
@@ -68,8 +77,10 @@ const PrivateNav = () => {
   } spy={true} smooth={true} >
         <h5>Goals</h5>
        </NavLink>
+       <NavLink>LogOut</NavLink>
     </NavbarExtendContainer>
       )}
+      
     </DIV>
   )
 }
@@ -137,7 +148,10 @@ const Left=styled.div`
 width: 30%;
 /* padding:20px; */
 
-
+img{
+  width:30%;
+  margin-left:0;
+}
 
 
 `

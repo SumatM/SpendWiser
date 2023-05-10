@@ -5,6 +5,7 @@ import { shallowEqual, useDispatch, useSelector } from 'react-redux';
 import { getExpenseData } from '../redux/budgetExpenseReducer/action';
 import { ExpenseForm } from './ExpenseForm';
 import { ExpenseItem } from './ExpenseItem';
+import PrivateNav from '../Components/PrivateNavBar';
 import styled from 'styled-components';
 
 
@@ -51,8 +52,8 @@ totalAmount=totalAmount+item.amount;
 
     return (
         <DIV>
+        <PrivateNav/>
                 <div className='title'>
-                <h1>Expenses</h1>
                 <h2 className="total-expense">Total Expense: ₹<span>{totalExpense()}</span></h2>
                 </div>
                 <div className="expense-content">
@@ -85,13 +86,12 @@ totalAmount=totalAmount+item.amount;
                 </div>
         </DIV>
     )
+    
 }
 
-
-
-
 const DIV = styled.div`
-    margin-top:75px;
+    margin-top:60px;
+    background-color:#0099ff;
 
     .title{
         text-align:center;
@@ -116,7 +116,7 @@ const DIV = styled.div`
     }
 
     .expense{
-        background-color:whitesmoke;
+        background-color:#81D4FA;
         padding:15px;
         width:50%;
     }
@@ -131,8 +131,9 @@ const DIV = styled.div`
         margin: 0 10px;
         color:white;
         font-weight:500;
-        background-color: gray;
+        background-color:blue;
     }
 
 `;
+
 

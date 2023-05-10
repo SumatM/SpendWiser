@@ -4,6 +4,7 @@ import { Link } from 'react-scroll'
 import styled from 'styled-components'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {IoMdClose} from 'react-icons/io'
+import logo from '../images/spendwiser-low-resolution-logo-color-on-transparent-background.png'
 
 const Navbar = () => {
     const [menuOpen,setMenuOpen]=useState(false)
@@ -13,7 +14,7 @@ const Navbar = () => {
   return (
     <DIV>
        <Left>
-        <img src="https://isavemoney.app/assets/images/isavemoney-logo.png" alt="logo"/>
+        <img src={logo} alt="logo"/>
        </Left>
        <Right>
        <LINK  activeClass="active" to="Navbar" spy={true} smooth={true} >Home</LINK>
@@ -107,6 +108,9 @@ const Left=styled.div`
 width: 20%;
 /* padding:20px; */
 
+img{
+  width:30%
+}
 
 `
 const Right=styled.div`

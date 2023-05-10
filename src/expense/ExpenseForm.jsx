@@ -29,8 +29,6 @@ export function ExpenseForm({update}) {
 
     const { title, amount, date, category,description } = inputState;
 
-
-
     const handleInput = name => e => {
 
         setInputState({...inputState, [name]: e.target.value}) 
@@ -78,9 +76,7 @@ export function ExpenseForm({update}) {
 
 
     return (
-
         <FormStyled>
-        <DIV>
         <form onSubmit={handleSubmit}>
 
             <div className="input-control">
@@ -135,9 +131,10 @@ export function ExpenseForm({update}) {
             </div>
         </form>
         </FormStyled>
-        </DIV>
     )
 }
+
+
 
 
 
@@ -182,7 +179,6 @@ const FormStyled = styled.form`
 
     
 `;
-
 
 
 
