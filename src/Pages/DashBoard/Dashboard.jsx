@@ -1,87 +1,114 @@
-import { useEffect, useState } from 'react';
+import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import PrivateNav from '../../Components/PrivateNavBar';
 import Chart from './../../Components/Chart'
 import styled from "styled-components"
-import { shallowEqual, useDispatch, useSelector } from 'react-redux';
+import { IncomeForm } from '../../Income/IncomeForm';
 import { getIncomeData } from '../../redux/budgetReducer/action';
+import { useEffect } from 'react';
 
 export default function Dashboard(){
 
-    const [update,setUpdate]=useState(false);
+    const dispatch=useDispatch();
 
-
-   const updateFunc=()=>{
-       setUpdate((prev)=>!prev);
-   }
-
-const dispatch=useDispatch();
-
-   
-
-    let {loading,incomeData,error}=useSelector((store)=>{
+    
+    let {incomeData,incomeDataId}=useSelector((store)=>{
         return {
-            loading:store.budgetReducer.isLoading,
+            // loading:store.budgetReducer.isLoading,
             incomeData:store.budgetReducer.userIncome,
-            error:store.budgetReducer.isError,
+            incomeDataId:store.AuthReducer.userData.id,
+            // error:store.budgetReducer.isError,
+    
         }
     },shallowEqual);
 
-    console.log(incomeData.income);
+//console.log(incomeData)
 
-    function chartDateFactory(date,income,expence){
-        let obj = {
-            name:date,
-            income,
-            expence
-        }
-        console.log(obj);
-    }
+const {income,expense} = incomeData;
 
-    //retrive data from store();
+console.log(income,expense)
 
-    useEffect(() =>{
-        dispatch(getIncomeData())
-        
-    }, [update])
+const totalIncome=()=>{
+    let totalAmount=0;
+      if(income!=undefined){
+        income.forEach((item)=>{
+totalAmount=totalAmount+item.amount;
+        })
+      }
+      return totalAmount;
+}
 
-    let chartData = [
-        {
-            "name": "Page A",
-            "income": 4000,
-            "expence": 2400,
-          },
-          {
-            "name": "Page B",
-            "income": 3000,
-            "expence": 1398,
-          },
-          {
-            "name": "Page C",
-            "income": 2000,
-            "expence": 9800,
-          },
-    ]
+
+const totalExpense=()=>{
+    let totalAmount=0;
+      if(expense!=undefined){
+        expense.forEach((item)=>{
+totalAmount=totalAmount+item.amount;
+        })
+      }
+      return totalAmount;
+}
+
+useEffect(() =>{
+    dispatch(getIncomeData(incomeDataId))
+}, [])
+
+
+let chartData = [
+    {
+    "name": "1/05/2023",
+    "income": 4000,
+    "expense": 2400,
+
+  },
+  {
+    "name": "2/05/2023",
+    "income": 3000,
+    "expense": 1398,
+  },
+  {
+    "name": "4/05/2023",
+    "income": 4500,
+    "expense": 200,
+
+  },
+  {
+    "name": "5/05/2023",
+    "income": 1500,
+    "expense": 680,
+  },
+  {
+    "name": "7/05/2023",
+    "income": 7000,
+    "expense": 2500,
+
+  },
+  {
+    "name": "9/05/2023",
+    "income": 500,
+    "expense": 128,
+  },
+]
     
     return (
         <DAS>
-            <h1>DashBoard</h1>
+        <PrivateNav/>
             <div>
                 <h2>All Transactions</h2>
             <div className="mainBox">
                 <div className="alignment">
         {/* chart */}
 
-        <div>
-            <h2>Chart</h2>
+        <div className='chart'>
             <Chart data={chartData}/>
         </div>
         <div className="leftCards">
             <div className="Cards">
                 <h4>Total Income</h4>
-                <h1>$1253</h1>
+                <h1>${totalIncome()}</h1>
             </div>
             <div className="Cards">
-                <h4>Total Income</h4>
-                <h1>$1253</h1>
+                <h4>Total Expense</h4>
+                <h1>${totalExpense()}</h1>
             </div>
             <div></div>
         </div>
@@ -90,45 +117,8 @@ const dispatch=useDispatch();
 
         {/* right side bar */}
 
-                <div className="alignment">
-        {/* recent history  */}
-                    <div>
-                    <div className="rightHeading"><h2>Recent History</h2></div>
-                    <div className="rows">
-                        <p>Travelling</p>
-                        <p>$120</p>
-                    </div>
-                    <div className="rows">
-                        <p>Travelling</p>
-                        <p>$120</p>
-                    </div>
-                    </div>
-        {/* salary */}
-                    <div>
-                    <div className="salaryheading rightHeading">
-                        <div><h5>Min</h5></div>
-                        <div><h2>Salary</h2></div>
-                        <div><h5>Max</h5></div>
-                    </div>
-                    <div className="rows">
-                        <p>$60</p>
-                        <p>$120</p>
-                    </div>
-                    </div>
-        {/* expenses */}
-        <div>
-                    <div className="salaryheading rightHeading">
-                        <div><h5>Min</h5></div>
-                        <div><h2>Expense</h2></div>
-                        <div><h5>Max</h5></div>
-                    </div>
-                    <div className="rows">
-                        <p>$60</p>
-                        <p>$120</p>
-                    </div>
-                    </div>
-                </div>
-
+                
+                
             </div>
             </div>
         </DAS>
@@ -137,10 +127,13 @@ const dispatch=useDispatch();
 
 
 const DAS = styled.div`
-
-margin-top:75px;
-
+display:flex;
+justify-content:center;
+margin-top:60px;
+background-color:#0099ff; 
 text-align:center;
+padding-bottom:50px;
+margin-bottom:0px;
 
 .mainBox{
     display:flex;
@@ -148,9 +141,9 @@ text-align:center;
     background-color:#0099ff;
 }
 
-.alignment{
-    width:40%;
-}
+
+
+
 
 .rows{
     display:flex;
@@ -178,7 +171,7 @@ text-align:center;
 .leftCards{
     display:flex;
     justify-content:space-between;
-    width:150%;
+    margin-top:35px;
 }
 
 .Cards{

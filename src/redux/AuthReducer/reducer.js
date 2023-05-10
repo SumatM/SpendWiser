@@ -67,6 +67,11 @@ export const reducer = (state = initialState, { type, payload }) => {
         isError: true,
       };
     }
+    case types.LOGOUT : {
+      return {
+        ...state,isAuth:false
+      }
+    }
 
     default:
       return state;

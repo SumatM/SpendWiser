@@ -1,14 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useNavigate } from 'react-router-dom'
 
 export const Home = () => {
+
+  const navigate = useNavigate();
+
+  function handlesignu(){
+    navigate('/signup')
+  }
+
+  function handleLogin(){
+    navigate('/login')
+  }
+
+
   return (
     <DIV id='Navbar' >
       <div className='Banner1'>
         <h1>Take control of your money</h1>
         <h4>Create your budget, organize your income and track your expenses</h4>
-        <button>Sign Up</button>
-        <button>Learn More</button>
+        <button onClick={handlesignu}>Sign Up</button>
+        <button onClick={handleLogin}>Login</button>
       </div>
       <div className='Bannerimg'>
         <img width="60%" src="https://img.freepik.com/free-vector/blank-screen-laptop-gadget-icon-isolated-white-background_1308-46353.jpg" alt="" />

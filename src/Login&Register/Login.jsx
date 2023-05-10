@@ -16,6 +16,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SetUserDataAfterLogin } from "../redux/AuthReducer/action";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 let initialValue = {
   email: "",
   password: "",
@@ -35,6 +36,10 @@ export const Login = () => {
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
   };
+
+  function handleBack(){
+    navigate('/')
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -62,7 +67,12 @@ export const Login = () => {
               isClosable: true,
             });
             
-            navigate(location.state);
+            
+            if(!location.state){
+              navigate('/dashboard')
+            }else{
+              navigate(location.state);
+            }
          
 
           } else {
@@ -94,7 +104,7 @@ export const Login = () => {
       <form onSubmit={handleSubmit}>
         <Stack spacing="4">
           <FormControl isRequired>
-            <FormLabel htmlFor="email">Email:</FormLabel>
+            <FormLabel display="inline"  htmlFor="email">Email:</FormLabel>
             <Input
               type="email"
               id="email"
@@ -104,8 +114,9 @@ export const Login = () => {
               placeholder="Enter your email"
             />
           </FormControl>
+          <Box>
           <FormControl isRequired>
-            <FormLabel htmlFor="password">Password:</FormLabel>
+            <FormLabel display="inline" htmlFor="password">Password:</FormLabel>
             <Input
               type="password"
               id="password"
@@ -115,16 +126,24 @@ export const Login = () => {
               placeholder="Enter your password"
             />
           </FormControl>
-          <Button
+          </Box>
+          <Box>
+          <Button 
             type="submit"
             backgroundColor={"#84c225"}
             color={"white"}
             isLoading={isLoading}
             loadingText="Logging in..."
+            w="10%"
             // colorScheme="blue"
           >
             Log In
           </Button>
+          </Box>
+          <br/>
+          <Box textAlign="center">
+            <h5 onClick={handleBack}>Back</h5>
+          </Box>
           {/* <br />
         <Link
           href="/signup"

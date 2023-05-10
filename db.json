@@ -6,7 +6,6 @@
       "password": "asd",
       "income": [
         {
-
           "id": 1683641374902,
           "title": "clkkldjskjioeuiu",
           "amount": 4546,
@@ -87,7 +86,14 @@
           "date": "2023-05-03T18:30:00.000Z",
           "category": "other",
           "description": "dfdsf"
-
+        },
+        {
+          "id": 1683733732812,
+          "title": "Salary",
+          "amount": 1500,
+          "date": "2023-05-17T18:30:00.000Z",
+          "category": "freelancing",
+          "description": "asdf"
         }
       ],
       "expense": [

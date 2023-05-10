@@ -40,6 +40,10 @@ const SignUp = () => {
     });
   };
 
+  function handleBack(){
+    navigate('/')
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setFormValues(initialValue);
@@ -92,7 +96,7 @@ const SignUp = () => {
   };
 
   return (
-    <Box mx="auto" w={{ base: "80%", md: "50%" }}>
+    <Box mx="auto" w={{ base: "80%", md: "50%" }} >
       <Heading as="h1" textAlign="center" my="8">
         Sign Up
       </Heading>
@@ -101,10 +105,10 @@ const SignUp = () => {
           <p>Error signing up. Please try again later.</p>
         </Box>
       )}
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <Stack spacing="4">
           <FormControl isRequired>
-            <FormLabel htmlFor="name">Name:</FormLabel>
+            <FormLabel htmlFor="name"  display="inline" >Name:</FormLabel>
             <Input
               type="text"
               id="name"
@@ -115,7 +119,7 @@ const SignUp = () => {
             />
           </FormControl>
           <FormControl isRequired>
-            <FormLabel htmlFor="email">Email:</FormLabel>
+            <FormLabel htmlFor="email" display="inline" >Email:</FormLabel>
             <Input
               type="email"
               id="email"
@@ -126,7 +130,7 @@ const SignUp = () => {
             />
           </FormControl>
           <FormControl isRequired>
-            <FormLabel htmlFor="password">Password:</FormLabel>
+            <FormLabel htmlFor="password" display="inline" >Password:</FormLabel>
             <Input
               type="password"
               id="password"
@@ -137,7 +141,7 @@ const SignUp = () => {
             />
           </FormControl>
           <FormControl isRequired>
-            <FormLabel htmlFor="confirmPassword">Confirm Password:</FormLabel>
+            <FormLabel htmlFor="confirmPassword" display="inline" >Confirm Password:</FormLabel>
             <Input
               type="password"
               id="confirmPassword"
@@ -147,14 +151,21 @@ const SignUp = () => {
               placeholder="Confirm your password"
             />
           </FormControl>
+          <Box>
           <Button
             type="submit"
             isLoading={isLoading}
             backgroundColor={"#84c225"}
             color={"white"}
+            w="10%"
           >
             {isLoading ? "Signing up..." : "Sign Up"}
           </Button>
+          </Box>
+          <br/>
+          <Box textAlign="center">
+            <h5 onClick={handleBack}>Back</h5>
+          </Box>
         </Stack>
       </form>
     </Box>

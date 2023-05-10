@@ -40,6 +40,8 @@ export const getUserError = () => ({
   type: types.GET_USER_ERROR,
 });
 
+
+
 // export const addUser = (userData) => async (dispatch) => {
 //   dispatch(addUserLoading());
 //   try {
@@ -76,6 +78,12 @@ export const getUsers = () => async (dispatch) => {
 
 //LOGIN AND LOGOUT
 
+
+
+export const LogoutUser = (dispatch) =>{
+    dispatch({type:types.LOGOUT})
+}
+
 // sigin or Login
 
 export const SetUserDataAfterLogin=(login)=>(dispatch)=>{
@@ -84,6 +92,8 @@ export const SetUserDataAfterLogin=(login)=>(dispatch)=>{
     dispatch({type:types.GET_USER_SUCCESS,payload:login});
     dispatch({type:types.GET_USER_ERROR})
 }
+
+
 
 // export const SetUserDataAfterLogin =
 //   (userData = {}) =>

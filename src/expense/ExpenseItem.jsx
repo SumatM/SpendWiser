@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { normalDate } from '../redux/budgetReducer/action';
 
 
+
 export function ExpenseItem({
     id,
     title,
@@ -42,16 +43,20 @@ const userId=useSelector((store)=>{
 
 
 
-  return <ItemDiv>
-  <div><h2>{title.substring(0,10)}</h2></div>
+return <>
+
+    <ItemDiv>
+    <div><h2>{title.substring(0,10)}</h2></div>
   <div><h2>{normalDate(date)}</h2></div>
   <div><h2>{amount}</h2></div>
   <div><h2>{category}</h2></div>
  <div> <button onClick={()=>remove(id)}>Remove</button></div>
-</ItemDiv>
+    </ItemDiv>
+</>
 
 
 }
+
 
 const ItemDiv  = styled.div`
 margin: 15px 5px;
@@ -60,6 +65,7 @@ justify-content:space-between;
 align-items:center;
 border:1px solid gray;
 padding:0 5px;
+background-color:#B2EBF2;
 
 :hover{
   button{
@@ -69,9 +75,10 @@ padding:0 5px;
 
 button{
   padding:10px;
-  background-color:black;
+  background-color:blue;
   color: white;
   display:none;
 }
 
 `;
+   

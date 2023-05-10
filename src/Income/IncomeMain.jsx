@@ -6,6 +6,7 @@ import { getIncomeData } from '../redux/budgetReducer/action';
 import { IncomeForm } from './IncomeForm';
 import { IncomeItem } from './IncomeItem';
 import styled from 'styled-components';
+import PrivateNav from '../Components/PrivateNavBar';
 
 
 
@@ -50,9 +51,9 @@ totalAmount=totalAmount+item.amount;
 }
 
     return (
-        <div>
+        <DIV>
+        <PrivateNav/>
                 <div className='title'>
-                <h1>Incomes</h1>
                 <h2 className="total-income">Total Income: ₹<span>{totalIncome()}</span></h2>
                 </div>
                 <div className="income-contents">
@@ -60,12 +61,12 @@ totalAmount=totalAmount+item.amount;
                         <IncomeForm  update={updateFunc}/>
                 </div>
                 <div className="incomes">
-                <div className='itemShow'>
-                <h2>Name</h2>
-                <h2>Date</h2>
-                <h2>Amount</h2>
-                <h2>Category</h2>
-                </div>
+                <div  className='itemShow'>
+                        <h2>Name</h2>
+                        <h2>Date</h2>
+                        <h2>Amount</h2>
+                        <h2>Category</h2>
+                        </div>
                         {incomeData?.income?.map((income) => {
                             const {id, title, amount, date, category, description} = income;
                             return <IncomeItem
@@ -81,13 +82,14 @@ totalAmount=totalAmount+item.amount;
                         })}
                 </div>
                 </div>
-        </div>
+        </DIV>
     )
 }
 
 
 const DIV = styled.div`
-    margin-top:75px;
+    margin-top:60px;
+    background-color:#0099ff;
 
     .title{
         text-align:center;
@@ -113,7 +115,7 @@ const DIV = styled.div`
 
     .incomes{
         width:50%;
-        background-color:whitesmoke;
+        background-color:#81D4FA;
         padding:15px;
     }
 
@@ -125,12 +127,11 @@ const DIV = styled.div`
         border:1px solid gray;
         padding:7px;
         margin: 0 10px;
-        background-color: gray;
+        background-color:blue;
         color:white;
         font-weight:500;
     }
 
 `;
-
 
 
