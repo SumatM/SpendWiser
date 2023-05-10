@@ -12,29 +12,32 @@ import styled from 'styled-components';
 export function IncomeMain() {
    const [update,setUpdate]=useState(false);
 
+   const dispatch=useDispatch();
+
+   let {incomeData,incomeDataId}=useSelector((store)=>{
+    return {
+        // loading:store.budgetReducer.isLoading,
+        incomeData:store.budgetReducer.userIncome,
+        incomeDataId:store.AuthReducer.userData.id,
+        // error:store.budgetReducer.isError,
+
+    }
+},shallowEqual);
+
 
    const updateFunc=()=>{
        setUpdate((prev)=>!prev);
    }
 
-const dispatch=useDispatch();
-
+   
     useEffect(() =>{
-        dispatch(getIncomeData())
+        dispatch(getIncomeData(incomeDataId))
     }, [update])
 
 
 
-
-let {loading,incomeData,error}=useSelector((store)=>{
-    return {
-        loading:store.budgetReducer.isLoading,
-        incomeData:store.budgetReducer.userIncome,
-        error:store.budgetReducer.isError,
-    }
-},shallowEqual);
-
-
+console.log(incomeDataId);
+console.log(incomeData)
 
 const totalIncome=()=>{
     let totalAmount=0;
@@ -47,7 +50,7 @@ totalAmount=totalAmount+item.amount;
 }
 
     return (
-        <DIV>
+        <div>
                 <div className='title'>
                 <h1>Incomes</h1>
                 <h2 className="total-income">Total Income: ₹<span>{totalIncome()}</span></h2>
@@ -78,7 +81,7 @@ totalAmount=totalAmount+item.amount;
                         })}
                 </div>
                 </div>
-        </DIV>
+        </div>
     )
 }
 

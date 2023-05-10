@@ -18,6 +18,10 @@ export function ExpenseItem({
 
 const dispatch=useDispatch();
 
+const userId=useSelector((store)=>{
+  return store.AuthReducer.userData.id;
+});
+
     let expense=useSelector((store)=>{
         return store.expenseReducer.userExpense.expense;
     })
@@ -27,12 +31,11 @@ const dispatch=useDispatch();
   })
    
   const remove=(id)=>{
-    console.log("yes")
      expense=expense.filter((item)=>item.id!=id);
      let data=expense;
     dispatch(removeExpense(data));
     
-    dispatch(PutUser(mydata)).then((res)=>{
+    dispatch(PutUser(mydata)(userId)).then((res)=>{
       update()
     })
   }

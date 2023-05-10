@@ -10,6 +10,10 @@ export function ExpenseForm({update}) {
    
     const dispatch=useDispatch();
 
+    const userId=useSelector((store)=>{
+        return store.AuthReducer.userData.id;
+  });
+
     let mydata=useSelector((store)=>{
         return store.expenseReducer.userExpense;
     })
@@ -61,7 +65,7 @@ export function ExpenseForm({update}) {
 
     console.log(mydata);
 
-     dispatch(PutUser(mydata)).then((res)=>{
+     dispatch(PutUser(mydata)(userId)).then((res)=>{
         update();
      })
 
@@ -74,7 +78,9 @@ export function ExpenseForm({update}) {
 
 
     return (
+
         <FormStyled>
+        <DIV>
         <form onSubmit={handleSubmit}>
 
             <div className="input-control">
@@ -129,6 +135,7 @@ export function ExpenseForm({update}) {
             </div>
         </form>
         </FormStyled>
+        </DIV>
     )
 }
 
