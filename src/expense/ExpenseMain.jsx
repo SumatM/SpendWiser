@@ -9,30 +9,34 @@ import { ExpenseItem } from './ExpenseItem';
 
 
 export function ExpenseMain() {
-   const [update,setUpdate]=useState(false);
 
+    const [update,setUpdate]=useState(false);
 
-   const updateFunc=()=>{
-       setUpdate((prev)=>!prev);
-   }
+    const dispatch=useDispatch();
 
-const dispatch=useDispatch();
-
-    useEffect(() =>{
-        dispatch(getExpenseData())
-    }, [update])
-
-
-
-const {loading,expenseData,error}=useSelector((store)=>{
-    return {
-        loading:store.expenseReducer.isLoading,
-        expenseData:store.expenseReducer.userExpense,
-        error:store.expenseReducer.isError,
+    let {expenseData,expenseDataId,}=useSelector((store)=>{
+     return {
+         // loading:store.budgetReducer.isLoading,
+         expenseData:store.expenseReducer.userExpense,
+         expenseDataId:store.AuthReducer.userData.id,
+         // error:store.budgetReducer.isError,
+ 
+     }
+ },shallowEqual);
+ 
+ 
+    const updateFunc=()=>{
+        setUpdate((prev)=>!prev);
     }
-},shallowEqual);
-
+    
+     useEffect(() =>{
+         dispatch(getExpenseData(expenseDataId))
+     }, [update]);
+ 
+ 
 console.log(expenseData);
+console.log(expenseDataId)
+
 
 const totalExpense=()=>{
     let totalAmount=0;

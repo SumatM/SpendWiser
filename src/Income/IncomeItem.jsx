@@ -4,6 +4,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { putUser, removeIncome } from '../redux/budgetReducer/action';
+import { PutUser } from '../redux/budgetExpenseReducer/action';
 
 
 
@@ -18,6 +19,10 @@ export function IncomeItem({
     update,
 }) {
 
+
+  const userId=useSelector((store)=>{
+    return store.AuthReducer.userData.id;
+});
 
 const dispatch=useDispatch();
 
@@ -35,7 +40,10 @@ const dispatch=useDispatch();
      let data=income;
      
     dispatch(removeIncome(data));
-    update();
+
+    dispatch(PutUser(mydata)(userId)).then((res)=>{
+      update()
+    })
   }
 
 return <>

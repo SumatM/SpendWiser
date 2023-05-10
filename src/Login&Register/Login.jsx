@@ -13,7 +13,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { SetUserDataAfterLogin } from "../Redux/AuthReducer/action";
+import { SetUserDataAfterLogin } from "../redux/AuthReducer/action";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 let initialValue = {
@@ -22,14 +22,11 @@ let initialValue = {
 };
 
 export const Login = () => {
-  //   const navigate = useNavigate();
-  //   const location = useLocation();
-  //   const state = location.state || { data: "/" };
-  //   console.log(state.data);
+    const navigate = useNavigate();
+    const location = useLocation();
   const toast = useToast();
   const dispatch = useDispatch();
   const { isLoading, isError } = useSelector((state) => {
-    console.log(state.AuthReducer);
     return state.AuthReducer;
   });
 
@@ -44,26 +41,30 @@ export const Login = () => {
     setFormValues(initialValue);
     try {
       let users = axios
-        .get("https://big-basket-api.onrender.com/Users")
+        .get("http://localhost:8080/userData")
         .then((response) => {
-          console.log(response);
           let login = response.data.find((item) => {
             return (
               item.email === formValues.email &&
               item.password === formValues.password
             );
           });
+
           if (login) {
+           
             dispatch(SetUserDataAfterLogin(login));
             toast({
               position: "top",
-              title: "Welcome to ApnaBasket.",
+              title: "Welcome to SpendAnalyser",
               description: "Successfully Logged in...",
               status: "success",
               duration: 4000,
               isClosable: true,
             });
-            // navigate("/");
+            
+            navigate(location.state);
+         
+
           } else {
             toast({
               position: "top",

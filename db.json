@@ -1,63 +1,96 @@
 {
   "userData": [
     {
-      "id": 1,
-      "name": "Shrinivas Katkamwar",
-      "email": "sinnu1908@gmail.com",
-      "mobile": 9156666233,
-      "password": "Shri@123",
+      "name": "dfd",
+      "email": "shri@gmail.com",
+      "password": "asd",
       "income": [
         {
-          "id": 1683641183116,
-          "title": "salary",
-          "amount": 80000,
+          "id": 1683690167866,
+          "title": "dsfsdfs",
+          "amount": 34,
+          "date": "2023-05-04T18:30:00.000Z",
+          "category": "freelancing",
+          "description": "dfdc"
+        },
+        {
+          "id": 1683691685101,
+          "title": "dfdfs",
+          "amount": 345,
           "date": "2023-05-11T18:30:00.000Z",
           "category": "freelancing",
-          "description": "job salary"
-        },
-        {
-          "id": 1683641356456,
-          "title": "jdskjkljlkjkc",
-          "amount": 5654,
-          "date": "2023-05-18T18:30:00.000Z",
-          "category": "investments",
-          "description": "fsdsffsd"
-        },
-        {
-          "id": 1683641374902,
-          "title": "clkkldjskjioeuiu",
-          "amount": 4546,
-          "date": "2023-05-12T18:30:00.000Z",
-          "category": "salary",
-          "description": "ghghfj"
+          "description": "ddsfds"
         }
       ],
       "expense": [
         {
-          "id": 1683585045389,
-          "title": "jdkjkjcjk",
-          "amount": 787,
-          "date": "2023-05-19T18:30:00.000Z",
-          "category": "transportation",
-          "description": "ncnklhjn"
-        },
-        {
-          "id": 1683585413187,
-          "title": "jdjkjdfjk",
-          "amount": 123,
-          "date": "2023-05-24T18:30:00.000Z",
-          "category": "food",
-          "description": "vnmdjkjl"
-        },
-        {
-          "id": 1683641786849,
-          "title": "dfsd",
+          "id": 1683692177025,
+          "title": "dkjkjkljd",
           "amount": 345,
-          "date": "2023-05-10T18:30:00.000Z",
-          "category": "medicalHealthcare",
-          "description": "dfscsd"
+          "date": "2023-05-02T18:30:00.000Z",
+          "category": "shopping",
+          "description": "dsfds"
         }
-      ]
+      ],
+      "id": 1
+    },
+    {
+      "name": "Ganesh Bahera",
+      "email": "ganesh@gmail.com",
+      "password": "Ganesh@123",
+      "income": [],
+      "expense": [],
+      "id": 2
+    },
+    {
+      "name": "dfsfd",
+      "email": "ddsf@gmail.com",
+      "password": "123",
+      "income": [],
+      "expense": [],
+      "id": 3
+    },
+    {
+      "name": "dfd",
+      "email": "s@gmail.com",
+      "password": "asd",
+      "income": [
+        {
+          "id": 1683691317466,
+          "title": "dfdf",
+          "amount": 45,
+          "date": "2023-05-01T18:30:00.000Z",
+          "category": "freelancing",
+          "description": "dfdfd"
+        },
+        {
+          "id": 1683693054155,
+          "title": "dsdsds",
+          "amount": 345,
+          "date": "2023-05-03T18:30:00.000Z",
+          "category": "other",
+          "description": "dfdsf"
+        }
+      ],
+      "expense": [
+        {
+          "id": 1683693251280,
+          "title": "dfdss",
+          "amount": 34,
+          "date": "2023-05-02T18:30:00.000Z",
+          "category": "shopping",
+          "description": "dfd"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "name": "sdd",
+      "email": "s@gmail.com",
+      "password": "sdf",
+      "income": [],
+      "expense": [],
+      "id": 5
     }
   ]
 }

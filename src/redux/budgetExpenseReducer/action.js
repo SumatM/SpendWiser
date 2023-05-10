@@ -1,9 +1,9 @@
 import axios from "axios";
 import { ADDEXPENSEDATA, FAILUREHISTORY, GETHISTORY, REMOVEEXPENSE, SUCCESSEXPENSEHISTORY } from "./actionType";
 
-export const getExpenseData=(dummy)=>(dispatch)=>{
+export const getExpenseData=(id)=>(dispatch)=>{
       dispatch({type:GETHISTORY});
-      axios.get("http://localhost:8080/userData/1")
+      axios.get(`http://localhost:8080/userData/${id}`)
       .then((res)=>{
         console.log(res.data)
         dispatch({type:SUCCESSEXPENSEHISTORY,payload:res.data})
@@ -25,8 +25,8 @@ dispatch({type:REMOVEEXPENSE,payload:data})
 }
 
 
-export const  PutUser=(data)=>(dispatch)=>{
-  return  axios.put("http://localhost:8080/userData/1",data)
+export const  PutUser=(data)=>(id)=>(dispatch)=>{
+  return  axios.put(`http://localhost:8080/userData/${id}`,data)
   .then((res)=>{
     console.log(res)
   })

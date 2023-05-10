@@ -5,7 +5,6 @@ const initialState = {
   isError: false,
   userData: {},
   isAuth: false,
-  userlist: [],
 };
 
 export const reducer = (state = initialState, { type, payload }) => {
@@ -57,8 +56,8 @@ export const reducer = (state = initialState, { type, payload }) => {
     case types.GET_USER_SUCCESS: {
       return {
         ...state,
-        isLoading: false,
-        userlist: [...payload],
+        isAuth:true,
+        userData:payload,
       };
     }
     case types.GET_USER_ERROR: {

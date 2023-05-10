@@ -40,23 +40,23 @@ export const getUserError = () => ({
   type: types.GET_USER_ERROR,
 });
 
-export const addUser = (userData) => async (dispatch) => {
-  dispatch(addUserLoading());
-  try {
-    const response = await axios.post(
-      "https://big-basket-api.onrender.com/Users",
-      userData
-    );
-    if (response.status === 201) {
-      dispatch(addUserSuccess());
-      console.log("User added successfully!");
-    }
-  } catch (error) {
-    dispatch(addUserError());
-    console.error(error);
-    console.log("An error occurred while adding the user.");
-  }
-};
+// export const addUser = (userData) => async (dispatch) => {
+//   dispatch(addUserLoading());
+//   try {
+//     const response = await axios.post(
+//       "https://big-basket-api.onrender.com/Users",
+//       userData
+//     );
+//     if (response.status === 201) {
+//       dispatch(addUserSuccess());
+//       console.log("User added successfully!");
+//     }
+//   } catch (error) {
+//     dispatch(addUserError());
+//     console.error(error);
+//     console.log("An error occurred while adding the user.");
+//   }
+// };
 
 export const getUsers = () => async (dispatch) => {
   dispatch(getUserLoading());
@@ -78,18 +78,25 @@ export const getUsers = () => async (dispatch) => {
 
 // sigin or Login
 
-export const SetUserDataAfterLogin =
-  (userData = {}) =>
-  async (dispatch) => {
-    try {
-      const result = dispatch({
-        type: types.LOGIN_SET_USER_DATA,
-        payload: userData,
-      });
-    } catch (error) {
-      console.log("error", error);
-    }
-  };
+export const SetUserDataAfterLogin=(login)=>(dispatch)=>{
+    dispatch({type:types.GET_USER_LOADING});
+    console.log(login)
+    dispatch({type:types.GET_USER_SUCCESS,payload:login});
+    dispatch({type:types.GET_USER_ERROR})
+}
+
+// export const SetUserDataAfterLogin =
+//   (userData = {}) =>
+//   async (dispatch) => {
+//     try {
+//       const result = dispatch({
+//         type: types.LOGIN_SET_USER_DATA,
+//         payload: userData,
+//       });
+//     } catch (error) {
+//       console.log("error", error);
+//     }
+//   };
 
 // signout or Logout from the website
 
