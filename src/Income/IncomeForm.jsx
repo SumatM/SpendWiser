@@ -38,6 +38,7 @@ export function IncomeForm({update}) {
     const handleSubmit = e => {
         e.preventDefault();
 
+            console.log("yes")
         let obj={
             id:new Date().getTime(),
             title,

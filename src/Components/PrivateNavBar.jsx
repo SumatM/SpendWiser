@@ -5,18 +5,20 @@ import styled from 'styled-components'
 import {GiHamburgerMenu} from 'react-icons/gi'
 import {IoMdClose} from 'react-icons/io'
 import logo from '../images/spendwiser-low-resolution-logo-color-on-transparent-background.png'
+import { LogoutUser } from '../redux/AuthReducer/action'
+import { useDispatch } from 'react-redux'
 
 const PrivateNav = () => {
     const [menuOpen,setMenuOpen]=useState(false)
     const handleClick=()=>{
         setMenuOpen((pre)=>!pre)
     }
-
+    const dispatch=useDispatch();
     
 
 
     function handleLogout(){
-
+      dispatch(LogoutUser())
     }
 
   return (
