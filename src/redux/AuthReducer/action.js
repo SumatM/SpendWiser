@@ -64,7 +64,7 @@ export const getUsers = () => async (dispatch) => {
   dispatch(getUserLoading());
   try {
     const response = await axios.get(
-      "https://big-basket-api.onrender.com/Users"
+      "https://spendwiser-mock-api.onrender.com/userData"
     );
     if (response.status === 200) {
       dispatch(getUserSuccess(response.data));

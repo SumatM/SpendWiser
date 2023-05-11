@@ -46,7 +46,7 @@ export const Login = () => {
     setFormValues(initialValue);
     try {
       let users = axios
-        .get("http://localhost:8080/userData")
+        .get("https://spendwiser-mock-api.onrender.com/userData")
         .then((response) => {
           let login = response.data.find((item) => {
             return (
@@ -60,7 +60,7 @@ export const Login = () => {
             dispatch(SetUserDataAfterLogin(login));
             toast({
               position: "top",
-              title: "Welcome to SpendAnalyser",
+              title: "Welcome to SpendWiser",
               description: "Successfully Logged in...",
               status: "success",
               duration: 4000,

@@ -3,7 +3,7 @@ import { ADDEXPENSEDATA, FAILUREHISTORY, GETHISTORY, REMOVEEXPENSE, SUCCESSEXPEN
 
 export const getExpenseData=(id)=>(dispatch)=>{
       dispatch({type:GETHISTORY});
-      axios.get(`http://localhost:8080/userData/${id}`)
+      axios.get(`https://spendwiser-mock-api.onrender.com/userData/${id}`)
       .then((res)=>{
         console.log(res.data)
         dispatch({type:SUCCESSEXPENSEHISTORY,payload:res.data})
@@ -26,7 +26,7 @@ dispatch({type:REMOVEEXPENSE,payload:data})
 
 
 export const  PutUser=(data)=>(id)=>(dispatch)=>{
-  return  axios.put(`http://localhost:8080/userData/${id}`,data)
+  return  axios.put(`https://spendwiser-mock-api.onrender.com/userData/${id}`,data)
   .then((res)=>{
     console.log(res)
   })

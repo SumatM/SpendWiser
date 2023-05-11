@@ -38,6 +38,8 @@ export function ExpenseForm({update}) {
 
     const handleSubmit = e => {
         console.log("yes")
+
+        
         e.preventDefault();
 
         let obj={
@@ -49,7 +51,7 @@ export function ExpenseForm({update}) {
             description,
         }
 
-      dispatch(addExpenseData(obj))
+     dispatch(addExpenseData(obj))
        
         setInputState({
             title: '',
@@ -69,7 +71,6 @@ export function ExpenseForm({update}) {
 
     }
 
-    
 
 
 
@@ -77,7 +78,7 @@ export function ExpenseForm({update}) {
 
     return (
         <FormStyled>
-        <form onSubmit={handleSubmit}>
+        <form >
 
             <div className="input-control">
                 <input 
@@ -127,7 +128,7 @@ export function ExpenseForm({update}) {
                 <textarea name="description" value={description} placeholder='Add A Reference' id="description" cols="30" rows="4" onChange={handleInput('description')}></textarea>
             </div>
             <div className="submit-btn">
-                <button type="submit">Add Expense</button>
+                <button  onClick={handleSubmit}>Add Expense</button>
             </div>
         </form>
         </FormStyled>

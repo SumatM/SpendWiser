@@ -46,7 +46,7 @@ const userId=useSelector((store)=>{
 return <>
 
     <ItemDiv>
-    <div><h2>{title.substring(0,10)}</h2></div>
+    <div><h2>{title.substring(0,10)}...</h2></div>
   <div><h2>{normalDate(date)}</h2></div>
   <div><h2>{amount}</h2></div>
   <div><h2>{category}</h2></div>

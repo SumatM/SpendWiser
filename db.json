@@ -72,28 +72,20 @@
       "password": "asd",
       "income": [
         {
-          "id": 1683691317466,
-          "title": "dfdf",
-          "amount": 45,
-          "date": "2023-05-01T18:30:00.000Z",
-          "category": "freelancing",
-          "description": "dfdfd"
-        },
-        {
-          "id": 1683693054155,
-          "title": "dsdsds",
-          "amount": 345,
-          "date": "2023-05-03T18:30:00.000Z",
-          "category": "other",
-          "description": "dfdsf"
-        },
-        {
           "id": 1683733732812,
           "title": "Salary",
           "amount": 1500,
           "date": "2023-05-17T18:30:00.000Z",
           "category": "freelancing",
           "description": "asdf"
+        },
+        {
+          "id": 1683782144131,
+          "title": "Rent ",
+          "amount": 1200,
+          "date": "2023-05-12T18:30:00.000Z",
+          "category": "freelancing",
+          "description": "Rent"
         }
       ],
       "expense": [
