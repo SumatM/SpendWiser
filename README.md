@@ -57,7 +57,7 @@ Contributions are always welcome!
 ## Authors
  [Sumat](https://github.com/SumatM)
  
- [Neelachari N H](https://github.com/Neelachari)
+ [Neelesh](https://github.com/Neelachari)
  
  [Shrinivas](https://github.com/sinnu1908)
   
