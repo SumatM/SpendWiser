@@ -1,6 +1,6 @@
 # spendwiser
 
-Its a web application that provides a platform to buy Pharmacy.It a user friendly E Commerce Website.
+Smart Spending: Empower Your Finances with Spend Wiser - The Ultimate Money Management App
 
 ![Project-icon](src/images/spendwiser-low-resolution-logo-color-on-transparent-background.png)
 
@@ -55,8 +55,13 @@ GitHub Link:https://github.com/SumatM/hilarious-wood-568
 
 Contributions are always welcome!
 ## Authors
+ [Sumat](https://github.com/SumatM)
  
  [Neelachari N H](https://github.com/Neelachari)
+ 
+ [Shrinivas](https://github.com/sinnu1908)
+  
+ [Ganesh](https://github.com/gb751006)
 ## Linkedin
 
  [Neelesh](https://www.linkedin.com/in/neelesh-n-h-2704a7196/)
