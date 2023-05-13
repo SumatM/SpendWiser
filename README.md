@@ -35,7 +35,7 @@ For support, email -neelachari34@gmail.com
 
 For Go to the website click the link:-(https://hilarious-wood-568-fw21-0275-updated1.vercel.app/)
 
-GitHub Link:https://github.com/Neelachari/supreme-honey-5251
+GitHub Link:https://github.com/SumatM/hilarious-wood-568
 ## Screenshots
 ![image](https://github.com/SumatM/hilarious-wood-568/assets/112808279/f5ef11cf-fd5f-4f73-a1b0-345b800430c5)
  
